@@ -6,7 +6,6 @@
 <body>
 
 <th:block th:include="~{/fragments/nav-new}"></th:block>
-
 <div th:object="${prod}" class="container mt-5">
     <br>  <h3 class="text-center font-weight-bold"> Product detailed information</h3>
     <hr>
@@ -76,8 +75,7 @@
 <br>
 
 <footer class="container">
-    <p class="float-right"><a href="#">Back to top</a></p>
-    <p>&copy; 2019-2020 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    <th:block th:include="~{/fragments/footer}"></th:block>
 </footer>
 
 

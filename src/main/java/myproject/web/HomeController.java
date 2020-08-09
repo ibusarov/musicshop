@@ -21,4 +21,10 @@ public class HomeController {
     public String homePost() {
         return "redirect:/home";
     }
+
+    @GetMapping("/home/contact")
+    public String contact(Model model) {
+
+        return "contact";
+    }
 }
