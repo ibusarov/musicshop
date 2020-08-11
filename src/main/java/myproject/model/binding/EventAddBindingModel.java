@@ -1,5 +1,6 @@
 package myproject.model.binding;
 
+import org.hibernate.validator.constraints.Length;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.validation.constraints.NotNull;
@@ -43,8 +44,9 @@ public class EventAddBindingModel {
         this.title = title;
     }
 
-    @NotNull
+
     @Size(min=10, message = "The descirption should be more than 10 characters.")
+    @Length(max = 3000)
     public String getDescription() {
         return description;
     }

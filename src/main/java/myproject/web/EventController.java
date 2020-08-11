@@ -29,7 +29,10 @@ public class EventController {
 
     @PreAuthorize("hasRole('ADMIN')")
     @GetMapping
-    public String event() {
+    public String event(Model model) {
+
+        model.addAttribute("eventList",eventService.findAll());
+
         return "events";
     }
 
@@ -60,6 +63,21 @@ public class EventController {
 
         this.eventService.createOrUpdateEvent(this.modelMapper
                 .map(eventAddBindingModel, EventServiceModel.class));
+
+        return "redirect:/";
+    }
+
+    @GetMapping("/lists")
+    public String getProductList(Model productList){
+
+        productList.addAttribute("eventList",eventService.findAll());
+        return "event-list";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable("id") String id)
+    {
+        this.eventService.delete(id);
 
         return "redirect:/";
     }

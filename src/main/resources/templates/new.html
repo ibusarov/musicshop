@@ -23,17 +23,13 @@
       </div>
     </div>
 
-    <div class="form-group">
-      <label for="eventDescription">Description</label>
-      <textarea class="form-control"
-                placeholder="Description"
-                th:errorclass="is-invalid"
-                id="eventDescription"
-                rows="5"
-                th:field="*{description}"></textarea>
-      <div class="invalid-feedback">
-        The description should be longer than 10 characters.
-      </div>
+    <div class="input-group mb-3">
+      <label for="description" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label">
+        Event description
+      </label>
+      <textarea th:field="*{description}" th:errorclass="bg-danger" id="description" rows="10" name="description"
+                class="form-control"></textarea>
+
     </div>
 
     <div class="form-group">

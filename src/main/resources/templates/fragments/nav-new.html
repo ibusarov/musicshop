@@ -28,6 +28,9 @@
                     <li sec:authorize="hasRole('ADMIN')" class="nav-item">
                         <a class="nav-link" th:href="@{/events}">Add Events</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/events/lists}">Events</a>
+                    </li>
 
                     <li class="nav-item">
                         <a class="nav-link" href="/users/logout">Logout</a>

@@ -10,12 +10,8 @@
 
 <th:block th:include="~{/fragments/nav-new}"></th:block>
 
-<!-- Behaviour -->
-<script sec:authorize="hasRole('ADMIN')">
-  $(document).on("click", ".open-delete-dialog", function () {
-    $("#deleteId").val($(this).data('id'));
-  });
-</script>
+<br>
+<br>
 
 <div class="my-2 d-flex justify-content-center mt-5">
   <h2>Please add new event</h2>
@@ -27,6 +23,35 @@
     <i class="fas fa-plus"></i>
   </a>
 </div>
+
+<div class="mx-auto" style="width: 85%; ">
+  <table class="table table-striped table-hover">
+
+    <thead>
+    <tr class="bg-success">
+
+      <th>Event Date</th>
+      <th>Event Title</th>
+      <th>Event Description</th>
+      <th>Delete</th>
+
+
+    </tr>
+    </thead>
+    <tr th:each="model : ${eventList}">
+
+      <td class="align-text-bottom"  th:text="${model.getEventDate()}">Event Date</td>
+      <td th:text="${model.getTitle()}">Event Title</td>
+      <td th:text="${model.getDescription()}">Description</td>
+      <td><a th:href="@{/events/delete/{id}(id=${model.getId()})}" class="btn btn-danger"><i class="far fa-trash-alt"></i></a></td>
+    </tr>
+
+  </table>
+</div>
+
+
+<p><br></p>
+
 
 
 <!-- Bootstap JS -->

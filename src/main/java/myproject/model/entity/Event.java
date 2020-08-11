@@ -1,5 +1,7 @@
 package myproject.model.entity;
 
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -41,8 +43,8 @@ public class Event extends BaseEntity{
         this.title = title;
     }
 
-    @NotNull
-    @Column
+
+    @Column(columnDefinition = "TEXT")
     public String getDescription() {
         return description;
     }
