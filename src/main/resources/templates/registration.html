@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="fragments/head :: head"></head>
+<head>
+  <th:block th:include="~{/fragments/headnew}"></th:block>
+</head>
 <body>
 
 <div class="container center">
   <div class="card">
     <article class="card-body">
-      <form th:action="@{/templates/registration}" method="post" th:object="${formData}">
+      <form th:action="@{/templates/registration}" method="post" th:object="${userRegisterBindingModel}">
         <div class="form-group">
           <label for="email">Email</label>
           <input
@@ -60,9 +62,9 @@
     </article>
   </div> <!-- card.// -->
 
-  <!-- Bootstap JS -->
-  <div th:replace="fragments/bootstrap-js :: bootstrap-js"></div>
-  <!-- EO: Bootstap JS -->
+
+  <th:block th:include="~{/fragments/footer}"></th:block>
+
 </div>
 </body>
 </html>

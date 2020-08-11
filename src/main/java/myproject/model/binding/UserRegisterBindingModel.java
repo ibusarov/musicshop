@@ -3,18 +3,19 @@ package myproject.model.binding;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.Email;
+import javax.validation.constraints.NotNull;
 
 public class UserRegisterBindingModel {
 
     private String email;
     private String password;
+    private String repeatPassword;
 
-    public UserRegisterBindingModel(String email, String password) {
-        this.email = email;
-        this.password = password;
+    public UserRegisterBindingModel() {
+
     }
 
-    @Email
+    @Email(message = "Enter valid email")
     public String getEmail() {
         return email;
     }
@@ -30,5 +31,14 @@ public class UserRegisterBindingModel {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @NotNull
+    public String getRepeatPassword() {
+        return repeatPassword;
+    }
+
+    public void setRepeatPassword(String repeatPassword) {
+        this.repeatPassword = repeatPassword;
     }
 }
