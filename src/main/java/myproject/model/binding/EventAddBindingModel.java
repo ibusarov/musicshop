@@ -1,29 +1,23 @@
-package myproject.model.entity;
+package myproject.model.binding;
 
-import javax.persistence.CollectionTable;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.time.Instant;
 import java.time.LocalDate;
-import java.util.Date;
 
-@Entity
-@Table(name="events")
-public class Event extends BaseEntity{
+public class EventAddBindingModel {
 
     private Instant createdOn;
     private Instant updatedOn;
-    private LocalDate eventDate;
     private String title;
     private String description;
+    private LocalDate eventDate;
 
-    public Event() {
+    public EventAddBindingModel() {
     }
 
-    @NotNull
-    @Column
     public Instant getCreatedOn() {
         return createdOn;
     }
@@ -31,8 +25,16 @@ public class Event extends BaseEntity{
     public void setCreatedOn(Instant createdOn) {
         this.createdOn = createdOn;
     }
+
+    public Instant getUpdatedOn() {
+        return updatedOn;
+    }
+
+    public void setUpdatedOn(Instant updatedOn) {
+        this.updatedOn = updatedOn;
+    }
+
     @NotNull
-    @Column
     public String getTitle() {
         return title;
     }
@@ -42,7 +44,7 @@ public class Event extends BaseEntity{
     }
 
     @NotNull
-    @Column
+    @Size(min=10, message = "The descirption should be more than 10 characters.")
     public String getDescription() {
         return description;
     }
@@ -51,19 +53,7 @@ public class Event extends BaseEntity{
         this.description = description;
     }
 
-
-    @NotNull
-    @Column
-    public Instant getUpdatedOn() {
-        return updatedOn;
-    }
-
-    public void setUpdatedOn(Instant updatedOn) {
-        this.updatedOn = updatedOn;
-    }
-
-
-    @Column
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     public LocalDate getEventDate() {
         return eventDate;
     }

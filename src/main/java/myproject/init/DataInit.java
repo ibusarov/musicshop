@@ -12,7 +12,9 @@ import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.time.Instant;
+import java.time.LocalDate;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.Set;
 
 @Component
@@ -41,7 +43,7 @@ public class DataInit implements CommandLineRunner {
             event.setDescription("Welcome to Metallica");
             event.setCreatedOn(Instant.now());
             event.setUpdatedOn(Instant.now());
-            event.setEventDate(Instant.parse("2020-10-05T00:00:00.00Z"));
+            event.setEventDate(LocalDate.of(2020,10,10));
             eventRepository.save(event);
         }
 

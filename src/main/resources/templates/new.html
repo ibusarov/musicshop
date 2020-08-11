@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head><th:block th:include="~{/fragments/headnew}"></th:block></head>
+<body>
+
+<!-- Navbar -->
+<th:block th:include="~{/fragments/nav-new}"></th:block>
+<!-- EO: Navbar -->
+
+<br><br>
+<div class="container">
+  <form th:action="@{/events/add}" method="post" th:object="${eventAddBindingModel}">
+    <div class="form-group">
+      <label for="eventTitle">Title</label>
+      <input type="text"
+             placeholder="Title"
+             class="form-control"
+             th:errorclass="is-invalid"
+             id="eventTitle"
+             th:field="*{title}"/>
+      <div class="invalid-feedback">
+        Please fill in a title.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="eventDescription">Description</label>
+      <textarea class="form-control"
+                placeholder="Description"
+                th:errorclass="is-invalid"
+                id="eventDescription"
+                rows="5"
+                th:field="*{description}"></textarea>
+      <div class="invalid-feedback">
+        The description should be longer than 10 characters.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="eventDate">Event Date</label>
+      <input type="text"
+             placeholder="yyyy-mm-dd"
+             class="form-control"
+             th:errorclass="is-invalid"
+             id="eventDate"
+             th:field="*{eventDate}"/>
+      <div class="invalid-feedback">
+        Please fill in a valid date.
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<!-- Bootstap JS -->
+<th:block th:include="~{/fragments/footer}"></th:block>
+<!-- EO: Bootstap JS -->
+
+</body>
+</html>

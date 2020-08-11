@@ -1,29 +1,17 @@
-package myproject.model.entity;
+package myproject.service;
 
-import javax.persistence.CollectionTable;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 import java.time.Instant;
 import java.time.LocalDate;
-import java.util.Date;
 
-@Entity
-@Table(name="events")
-public class Event extends BaseEntity{
+public class EventServiceModel extends BaseServiceModel {
 
     private Instant createdOn;
     private Instant updatedOn;
-    private LocalDate eventDate;
     private String title;
     private String description;
+    private LocalDate eventDate;
 
-    public Event() {
-    }
 
-    @NotNull
-    @Column
     public Instant getCreatedOn() {
         return createdOn;
     }
@@ -31,29 +19,7 @@ public class Event extends BaseEntity{
     public void setCreatedOn(Instant createdOn) {
         this.createdOn = createdOn;
     }
-    @NotNull
-    @Column
-    public String getTitle() {
-        return title;
-    }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    @NotNull
-    @Column
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-
-    @NotNull
-    @Column
     public Instant getUpdatedOn() {
         return updatedOn;
     }
@@ -63,7 +29,24 @@ public class Event extends BaseEntity{
     }
 
 
-    @Column
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+
     public LocalDate getEventDate() {
         return eventDate;
     }
