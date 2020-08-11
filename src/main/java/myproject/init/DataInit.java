@@ -3,6 +3,7 @@ package myproject.init;
 import myproject.model.entity.*;
 
 import myproject.repository.CategoryRepository;
+import myproject.repository.EventRepository;
 import myproject.repository.ProductRepository;
 import myproject.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -10,8 +11,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
+import java.time.Instant;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Set;
 
 @Component
@@ -21,25 +22,28 @@ public class DataInit implements CommandLineRunner {
     private final PasswordEncoder passwordEncoder;
     private final CategoryRepository categoryRepository;
     private final ProductRepository productRepository;
+    private final EventRepository eventRepository;
 
-    public DataInit(UserRepository userRepository, PasswordEncoder passwordEncoder, CategoryRepository categoryRepository, ProductRepository productRepository) {
+    public DataInit(UserRepository userRepository, PasswordEncoder passwordEncoder, CategoryRepository categoryRepository, ProductRepository productRepository, EventRepository eventRepository) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.categoryRepository = categoryRepository;
         this.productRepository = productRepository;
+        this.eventRepository = eventRepository;
     }
 
     @Override
     public void run(String... args) throws Exception {
 
-//        if (announcementRepository.count() == 0) {
-//            AnnouncementEntity announcementEntity = new AnnouncementEntity();
-//            announcementEntity.setTitle("Hello, Softuni!");
-//            announcementEntity.setDescription("Welcome to the Srping advacned course!");
-//            announcementEntity.setCreatedOn(Instant.now());
-//            announcementEntity.setUpdatedOn(Instant.now());
-//            announcementRepository.save(announcementEntity);
-//        }
+        if (eventRepository.count() == 0) {
+            Event event = new Event();
+            event.setTitle("Hard Rock Concert Event");
+            event.setDescription("Welcome to Metallica");
+            event.setCreatedOn(Instant.now());
+            event.setUpdatedOn(Instant.now());
+            event.setEventDate(Instant.parse("2020-10-05T00:00:00.00Z"));
+            eventRepository.save(event);
+        }
 
         if (this.categoryRepository.count()==0){
             Arrays.stream(CategoryName.values())

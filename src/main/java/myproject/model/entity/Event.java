@@ -12,6 +12,8 @@ import java.time.Instant;
 public class Event extends BaseEntity{
 
     private Instant createdOn;
+    private Instant updatedOn;
+    private Instant eventDate;
     private String title;
     private String description;
 
@@ -45,5 +47,27 @@ public class Event extends BaseEntity{
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+
+    @NotNull
+    @Column
+    public Instant getUpdatedOn() {
+        return updatedOn;
+    }
+
+    public void setUpdatedOn(Instant updatedOn) {
+        this.updatedOn = updatedOn;
+    }
+
+
+    @NotNull
+    @Column
+    public Instant getEventDate() {
+        return eventDate;
+    }
+
+    public void setEventDate(Instant eventDate) {
+        this.eventDate = eventDate;
     }
 }
