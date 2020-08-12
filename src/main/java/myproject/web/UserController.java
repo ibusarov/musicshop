@@ -27,13 +27,7 @@ public class UserController {
         this.modelMapper = modelMapper;
     }
 
-    @GetMapping("/profile")
-    public String profile(Model model, @RequestParam("id") String id){
-
-        model.addAttribute("user",this.modelMapper.
-                map(this.userService.findById(id), UserProfileViewModel.class));
-        return "profile";
-    }
+//
 
     @RequestMapping("/logout")
     public String logout(HttpSession session) {
@@ -53,27 +47,27 @@ public class UserController {
         return "registration";
     }
 
-    @PostMapping("/registration")
-    public String registerConfirm(@Valid @ModelAttribute("userRegisterBindingModel")
-                                              UserRegisterBindingModel userRegisterBindingModel,
-                                  BindingResult bindingResult, RedirectAttributes redirectAttributes) {
-
-        if (bindingResult.hasErrors()||!userRegisterBindingModel.getPassword()
-                .equals(userRegisterBindingModel.getRepeatPassword())) {
-            return "registration";
-        }
-
-        if (userService.existsUser(userRegisterBindingModel.getEmail())) {
-            bindingResult.rejectValue("email",
-                    "error.email",
-                    "An account with this email already exists.");
-            return "registration";
-        }
-
-        userService.createAndLoginUser(userRegisterBindingModel.getEmail(), userRegisterBindingModel.getPassword());
-
-        return "redirect:home";
-    }
+//    @PostMapping("/registration")
+//    public String registerConfirm(@Valid @ModelAttribute("userRegisterBindingModel")
+//                                              UserRegisterBindingModel userRegisterBindingModel,
+//                                  BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+//
+//        if (bindingResult.hasErrors()||!userRegisterBindingModel.getPassword()
+//                .equals(userRegisterBindingModel.getRepeatPassword())) {
+//            return "registration";
+//        }
+//
+//        if (userService.existsUser(userRegisterBindingModel.getEmail())) {
+//            bindingResult.rejectValue("email",
+//                    "error.email",
+//                    "An account with this email already exists.");
+//            return "registration";
+//        }
+//
+//        userService.createAndLoginUser(userRegisterBindingModel.getEmail(), userRegisterBindingModel.getPassword());
+//
+//        return "redirect:home";
+//    }
 
 
 
