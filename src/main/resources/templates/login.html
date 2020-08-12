@@ -3,11 +3,49 @@
 <head>
   <th:block th:include="~{/fragments/headnew}"></th:block>
 </head>
+
 <body>
-
+<th:block th:include="~{/fragments/nav-new}"></th:block>
 <div class="container center mt-5">
+  <div class="card-deck">
+    <div class="card">
+      <div class="card-body">
+        <img class="card-img-top" src="/images/others.jpg" alt="Card image cap">
+        <p><br></p>
+        <h4 class="card-text"><b>Guitar lessons</b></h4>
+      </div>
+    </div>
 
-    <article class="card-body" width="20">
+    <div class="card">
+<!--      <h5 class="card-title">The Best Instruments</h5>-->
+      <div class="card-body">
+        <img class="card-img-top" src="/images/2.jpg" alt="Card image cap">
+        <p><br></p>
+        <h4 class="card-text"><b>Concerts tickets</b></h4>
+      </div>
+
+    </div>
+
+    <div class="card">
+<!--      <h5 class="card-title">The Best Instruments</h5>-->
+      <div class="card-body">
+        <img class="card-img-top" src="/images/1.jpg" alt="Card image cap">
+        <p><br></p>
+        <h4 class="card-text"><b>All music promotions</b></h4>
+      </div>
+
+    </div>
+
+
+  </div>
+</div>
+
+
+
+<div class="container center mt-5" >
+
+  <div class="card-group">
+    <article class="card-body">
       <a th:href="@{/registration}" class="float-right btn btn-outline-primary">Sign up</a>
       <br>
 
@@ -33,27 +71,35 @@
                     placeholder="Password"
                     class="form-control"
                     id="userPassword"/>
-          </div>
+          </div> <!-- form-group// -->
           <div class="row">
             <div class="col-md-6">
               <div class="form-group">
                 <button type="submit" class="btn btn-primary btn-block">Login</button>
-              </div>
+              </div> <!-- form-group// -->
             </div>
-          </div>
+            <div class="col-md-6 text-right">
+              <a class="small" href="#">Forgot password?</a>
+            </div>
+          </div> <!-- .row// -->
         </form>
-
     </article>
 
-  <article>
+    <article class="card">
 
-    <p> Lorem ipsum</p>
-
-  </article>
-
-
-
-  <th:block th:include="~{/fragments/footer}"></th:block>
+      <img src="/images/guitar.png" alt="picture" width="100%" height="100%">
+    </article>
+  </div>
 </div>
+
+
+<br>
+
+
+
+<div> <th:block th:include="~{/fragments/footer}"></th:block></div>
+
 </body>
+
 </html>
+
