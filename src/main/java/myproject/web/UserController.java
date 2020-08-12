@@ -19,57 +19,12 @@ import javax.validation.Valid;
 @RequestMapping("/users")
 public class UserController {
 
-    private final UserService userService;
-    private final ModelMapper modelMapper;
 
-    public UserController(UserService userService, ModelMapper modelMapper) {
-        this.userService = userService;
-        this.modelMapper = modelMapper;
-    }
-
-//
 
     @RequestMapping("/logout")
     public String logout(HttpSession session) {
         session.invalidate();
         return "redirect:/";
     }
-
-
-
-    @GetMapping("/registration")
-    public String register(Model model) {
-
-        if (!model.containsAttribute("userRegisterBindingModel")){
-            model.addAttribute("userRegisterBindingModel", new UserRegisterBindingModel());
-        }
-
-        return "registration";
-    }
-
-//    @PostMapping("/registration")
-//    public String registerConfirm(@Valid @ModelAttribute("userRegisterBindingModel")
-//                                              UserRegisterBindingModel userRegisterBindingModel,
-//                                  BindingResult bindingResult, RedirectAttributes redirectAttributes) {
-//
-//        if (bindingResult.hasErrors()||!userRegisterBindingModel.getPassword()
-//                .equals(userRegisterBindingModel.getRepeatPassword())) {
-//            return "registration";
-//        }
-//
-//        if (userService.existsUser(userRegisterBindingModel.getEmail())) {
-//            bindingResult.rejectValue("email",
-//                    "error.email",
-//                    "An account with this email already exists.");
-//            return "registration";
-//        }
-//
-//        userService.createAndLoginUser(userRegisterBindingModel.getEmail(), userRegisterBindingModel.getPassword());
-//
-//        return "redirect:home";
-//    }
-
-
-
 
 }
