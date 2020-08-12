@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "conatacts")
+@Table(name = "contacts")
 public class Contact extends BaseEntity{
     private String name;
     private String email;

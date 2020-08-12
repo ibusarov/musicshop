@@ -7,52 +7,53 @@
 
 <div class="container center mt-5">
 
-  <div class="card bg-img">
-    <article class="card-body">
+    <article class="card-body" width="20">
       <a th:href="@{/registration}" class="float-right btn btn-outline-primary">Sign up</a>
       <br>
-     <div class="bg-img">
-      <form th:action="@{/login/authenticate}" method="post">
-        <div th:if="${error}" class="alert alert-danger" role="alert">
-          This username and password combination does not exist.
-        </div>
-        <div class="form-group">
-          <label for="userEmail">Email</label>
-          <input
-                  name="username"
-                  type="email"
-                  th:value="${username}"
-                  placeholder="Email"
-                  class="form-control"
-                  id="userEmail"/>
-        </div> <!-- form-group// -->
-        <div class="form-group">
-          <label for="userPassword">Password</label>
-          <input
-                  name="password"
-                  type="password"
-                  placeholder="Password"
-                  class="form-control"
-                  id="userPassword"/>
-        </div> <!-- form-group// -->
-        <div class="row">
-          <div class="col-md-6">
-            <div class="form-group">
-              <button type="submit" class="btn btn-primary btn-block">Login</button>
-            </div> <!-- form-group// -->
+
+        <form th:action="@{/login/authenticate}" method="post">
+          <div th:if="${error}" class="alert alert-danger" role="alert">
+            This username and password combination does not exist.
           </div>
-          <div class="col-md-6 text-right">
-            <a class="small" href="#">Forgot password?</a>
+          <div class="form-group">
+            <label for="userEmail">Email</label>
+            <input
+                    name="username"
+                    type="email"
+                    th:value="${username}"
+                    placeholder="Email"
+                    class="form-control"
+                    id="userEmail"/>
+          </div> <!-- form-group// -->
+          <div class="form-group">
+            <label for="userPassword">Password</label>
+            <input
+                    name="password"
+                    type="password"
+                    placeholder="Password"
+                    class="form-control"
+                    id="userPassword"/>
           </div>
-        </div> <!-- .row// -->
-      </form>
-     </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+              </div>
+            </div>
+          </div>
+        </form>
+
     </article>
-  </div> <!-- card.// -->
+
+  <article>
+
+    <p> Lorem ipsum</p>
+
+  </article>
+
 
 
   <th:block th:include="~{/fragments/footer}"></th:block>
 </div>
 </body>
 </html>
-
