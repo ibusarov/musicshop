@@ -7,7 +7,8 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "contacts")
 public class Contact extends BaseEntity{
-    private String name;
+    private String fname;
+    private String lname;
     private String email;
     private String phone;
     private String msg;
@@ -15,13 +16,22 @@ public class Contact extends BaseEntity{
     public Contact() {
     }
 
-    @Column(name="name",nullable = false)
-    public String getName() {
-        return name;
+    @Column(nullable = false)
+    public String getFname() {
+        return fname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFname(String fname) {
+        this.fname = fname;
+    }
+
+    @Column
+    public String getLname() {
+        return lname;
+    }
+
+    public void setLname(String lname) {
+        this.lname = lname;
     }
 
     @Column(name="email",nullable = false)

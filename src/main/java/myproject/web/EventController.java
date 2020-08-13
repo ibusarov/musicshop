@@ -67,6 +67,7 @@ public class EventController {
         return "redirect:/";
     }
 
+
     @GetMapping("/lists")
     public String getProductList(Model productList){
 

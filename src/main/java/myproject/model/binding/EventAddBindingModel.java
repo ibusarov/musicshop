@@ -45,8 +45,7 @@ public class EventAddBindingModel {
     }
 
 
-    @Size(min=10, message = "The descirption should be more than 10 characters.")
-    @Length(max = 3000)
+    @Length(min=10, message = "The descirption should be more than 10 characters.")
     public String getDescription() {
         return description;
     }
