@@ -20,13 +20,18 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" th:href="@{/contacts/addmsg}">Contact Us</a>
+                        <a class="nav-link" th:href="@{/contacts/addmsg}">ContactUs</a>
                     </li>
                     <li sec:authorize="hasRole('ADMIN')" class="nav-item">
-                        <a class="nav-link" th:href="@{/products/add}">Add Product</a>
+                        <a class="nav-link" th:href="@{/products/add}">AddProduct</a>
                     </li>
+
                     <li sec:authorize="hasRole('ADMIN')" class="nav-item">
-                        <a class="nav-link" th:href="@{/events}">Add Events</a>
+                        <a class="nav-link" th:href="@{/products/adminlist}">AdminList</a>
+                    </li>
+
+                    <li sec:authorize="hasRole('ADMIN')" class="nav-item">
+                        <a class="nav-link" th:href="@{/events}">AddEvents</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" th:href="@{/events/lists}">Events</a>
@@ -36,8 +41,10 @@
                         <a class="nav-link" href="/users/logout">Logout</a>
                     </li>
                     <li sec:authorize="hasRole('ADMIN')" class="nav-item">
-                        <a class="nav-link" th:href="@{/contacts/lists}">CustomerFeedback</a>
+                        <a class="nav-link" th:href="@{/contacts/lists}">Feedback</a>
                     </li>
+
+
 
                 </ul>
                 </th:block>
@@ -48,15 +55,6 @@
                             <a class="nav-link" href="#">WELCOME <span class="sr-only">(current)</span></a>
                         </li>
 
-<!--                        <li class="nav-item">-->
-<!--                            <a class="nav-link" th:href="@{/login}">Login</a>-->
-<!--                        </li>-->
-<!--                        <li class="nav-item">-->
-<!--                            <a class="nav-link" th:href="@{/registration}">Register</a>-->
-<!--                        </li>-->
-<!--                        <li class="nav-item">-->
-<!--                            <a class="nav-link" th:href="@{/home/contact}">Contact</a>-->
-<!--                        </li>-->
                     </ul>
                 </th:block>
             </div>

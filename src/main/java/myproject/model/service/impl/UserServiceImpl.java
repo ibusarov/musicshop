@@ -130,17 +130,4 @@ public class UserServiceImpl implements UserService {
         return  createUser(email, null);
     }
 
-//    @Override
-//    public UserServiceModel registerUser(UserServiceModel userServiceModel) {
-//        userServiceModel.setRole(this.roleService.findOneByRole("ROLE_USER"));
-//
-//        UserEntity user=this.modelMapper.map(userServiceModel,UserEntity.class);
-//
-//        this.userRepository.saveAndFlush(user);
-//
-//
-//
-//        return this.modelMapper
-//                .map(this.userRepository.saveAndFlush(user), UserServiceModel.class);
-//    }
 }

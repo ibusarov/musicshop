@@ -68,16 +68,30 @@ private final ProductService productService;
             return "redirect:add";
         }
 
-//        System.out.println();
+
 
         this.productService.addProduct(this.modelMapper
                 .map(productAddBindingModel, ProductServiceModel.class));
 
-//        System.out.println();
+
 
         return "redirect:/";
     }
 
+    @GetMapping("/adminlist")
+    public String getProductListAdmin(Model productListAdmin){
+
+        productListAdmin.addAttribute("productListAdmin",productService.productList());
+        return "admin-list-product";
+    }
+
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable("id") String id)
+    {
+        this.productService.delete(id);
+
+        return "redirect:/";
+    }
 
 
 }

@@ -9,7 +9,7 @@ public class UserServiceModel extends BaseServiceModel {
     private String email;
     private String password;
     private String repeatPassword;
-    //private RoleServiceModel role;
+
 
     public UserServiceModel() {
     }
@@ -38,11 +38,4 @@ public class UserServiceModel extends BaseServiceModel {
         this.repeatPassword = repeatPassword;
     }
 
-//    public RoleServiceModel getRole() {
-//        return role;
-//    }
-//
-//    public void setRole(RoleServiceModel role) {
-//        this.role = role;
-//    }
 }
