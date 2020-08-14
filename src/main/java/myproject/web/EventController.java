@@ -69,9 +69,9 @@ public class EventController {
 
 
     @GetMapping("/lists")
-    public String getProductList(Model productList){
+    public String getEventList(Model eventList){
 
-        productList.addAttribute("eventList",eventService.findAll());
+        eventList.addAttribute("eventList",eventService.findAll());
         return "event-list";
     }
 

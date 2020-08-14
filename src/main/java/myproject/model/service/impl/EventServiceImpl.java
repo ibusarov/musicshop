@@ -30,10 +30,8 @@ public class EventServiceImpl implements EventService {
         return this.eventRepository
                 .findAll()
                 .stream()
-                .map(event -> { return this.modelMapper
-                        .map(event,EventServiceModel.class);
-
-                }).collect(Collectors.toList());
+                .map(event -> this.modelMapper
+                        .map(event,EventServiceModel.class)).collect(Collectors.toList());
     }
 
     @Override
