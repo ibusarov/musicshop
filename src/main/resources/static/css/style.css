@@ -1,5 +1,5 @@
 .carousel-item {
-  height: 75vh;
+  height: 100vh;
   min-height: 30px;
   background: no-repeat center center scroll;
   -webkit-background-size:cover;
@@ -71,17 +71,5 @@
   cursor: zoom-in;
 }
 
-.bg-img {
-  /* The image used */
-  background-image: url(../images/guitar.png);
 
-  /* Control the height of the image */
-  min-height: 380px;
-
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
 
