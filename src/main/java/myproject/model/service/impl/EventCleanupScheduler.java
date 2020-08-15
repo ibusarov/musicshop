@@ -13,7 +13,7 @@ public class EventCleanupScheduler {
         this.eventService = eventService;
     }
 
-    @Scheduled(cron = "0 0 * * SUN")
+    @Scheduled(cron = "0 0 12 * * SUN")
     public void cleanUpOldEvents() {
         eventService.cleanUpOldEvent();
     }
